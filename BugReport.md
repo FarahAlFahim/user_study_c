@@ -18,10 +18,12 @@ The root cause of the issue is that the `JobImpl.finished` method does not handl
 Implement handling for the `'ERROR'` state in the `JobImpl.finished` method. Consider logging the error and transitioning to a safe state instead of throwing an exception.
 
 ## ProblemLocation
+```
 {
     class: JobImpl.java,
     methods: [JobImpl.finished, JobImpl$InternalErrorTransition.transition]
 }
+```
 
 ## PossibleFix
 Modify the `JobImpl.finished` method to include a case for handling the `'ERROR'` state. For example:
